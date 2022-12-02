@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hockey Helmet Washington Capitals
+* source:	https://sketchfab.com/3d-models/hockey-helmet-washington-capitals-e49ac53913ab4bb5af3396cd273ef783
+* author:	Andrey Novichkov (https://sketchfab.com/hophobb)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hockey Helmet Washington Capitals" (https://sketchfab.com/3d-models/hockey-helmet-washington-capitals-e49ac53913ab4bb5af3396cd273ef783) by Andrey Novichkov (https://sketchfab.com/hophobb) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
