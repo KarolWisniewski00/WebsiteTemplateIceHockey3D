@@ -7,12 +7,21 @@
 @section('helmet')
 <script src="{{asset('js/main.js')}}"></script>
 @endsection
+@section('nav')
+<li><a href="{{url('/#first')}}" class="nav-link px-2 text-secondary">Start</a></li>
+<li><a href="{{url('/#second')}}" class="nav-link px-2 text-black">Najbliższe mecze</a></li>
+<li><a href="{{url('/#third')}}" class="nav-link px-2 text-black">Statystyki</a></li>
+<li><a href="{{url('/#fourth')}}" class="nav-link px-2 text-black">Tabela</a></li>
+<li><a href="{{url('/about')}}" class="nav-link px-2 text-black">O projekcie</a></li>
+@endsection
 @section('content')
+<!--FIRST-->
 <section id="first">
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <div class="header-div">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-6 d-flex flex-column justify-content-center">
+                <div>
+                    <!--CONTENT-->
                     <h1 class="header-title-1">HOKEJ</h1>
                     <p id="first-paragraf" class="paragraf">
                         Strona internetowa o tematyce amerykańskiej ligi hokeja - NHL.
@@ -21,7 +30,8 @@
                     </p>
                     <a href="#second" class="btn btn-danger mb-1">Mecze</a>
                     <a href="{{url('about')}}" class="btn btn-outline-dark mb-1">Więcej o projekcie</a>
-                    <div class="d-none d-sm-flex scroll-down w-100 text-center">
+                    <!--SCROLL-->
+                    <div class="scroll-down w-100 text-center">
                         <div class="hover">
                             <a href="#second" class="text-black text-decoration-none">
                                 <div>SKROLUJ W DÓŁ</div>
@@ -29,22 +39,19 @@
                             </a>
                         </div>
                     </div>
+                    <!--ENDCONTENT-->
                 </div>
             </div>
         </div>
     </div>
-    <div class="number-page d-none d-md-block">
-        <div id="number-1">01</div>
-        <div class="margin-100vh" id="number-2">02</div>
-        <div class="margin-100vh" id="number-3">03</div>
-        <div class="margin-100vh" id="number-4">04</div>
-    </div>
 </section>
+<!--SECOND-->
 <section id="second">
     <div class="container">
         <div class="row">
-            <div class="col-6 offset-6 col-lg-3 offset-lg-9">
-                <div class="header-div">
+            <div class="col-6 offset-6 col-lg-3 offset-lg-9 d-flex flex-column justify-content-center">
+                <div id="second-div">
+                    <!--CONTENT-->
                     <div class="before-title">Najbliższe</div>
                     <h1 class="header-title text-danger" id="second-header">Mecze</h1>
                     <p id="second-paragraf" class="paragraf">
@@ -83,6 +90,7 @@
                         <div class="text-danger text-center fw-bold">Brak meczy w najbliższych 30 dniach</div>
                         @endif
                     </div>
+                    <!--SCROLL-->
                     <div class="scroll-down w-100 text-center">
                         <div class="hover">
                             <a href="#third" class="text-black text-decoration-none">
@@ -91,17 +99,19 @@
                             </a>
                         </div>
                     </div>
+                    <!--ENDCONTENT-->
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!--THIRD-->
 <section id="third">
-    <div class="container h-100">
+    <div class="container">
         <div class="row">
             <div class="col-6 col-lg-3 d-flex flex-column justify-content-center">
                 <div id="third-text">
-                    <img src="{{asset('images/nhl.png')}}" class="d-block w-100 p-5" alt="nhl">
+                    <!--CONTENT-->
                     <span id="third-paragraf"></span>
                     <div id="carouselTeams" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -131,6 +141,7 @@
                     <p class="paragraf">
                         Dla każdej drużyny pokazuje liczbę wygranych, zdobytych goli oraz wygranych wznowień gry
                     </p>
+                    <!--SCROLL-->
                     <div class="scroll-down w-100 text-center">
                         <div class="hover">
                             <a href="#fourth" class="text-black text-decoration-none">
@@ -139,10 +150,12 @@
                             </a>
                         </div>
                     </div>
+                    <!--ENDCONTENT-->
                 </div>
             </div>
             <div class="col-6 col-lg-3 offset-lg-6 d-flex flex-column justify-content-center">
                 <div class="align-items-end d-flex flex-column text-center" id="third-images">
+                    <!--CONTENT-->
                     <div class="w-25 my-3">
                         <img class="img-fluid img-hover" src="{{asset('images/success.png')}}" alt="icon-trofeum">
                     </div>
@@ -155,22 +168,18 @@
                         <img class="img-fluid img-hover" src="{{asset('images/hockey.png')}}" alt="icon-hockey">
                     </div>
                     <div class="w-25 stats" id="faceoff">{{$teams[0]['teamStats'][0]['splits'][0]['stat']['faceOffsWon']}}</div>
+                    <!--ENDCONTENT-->
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        //get data from php
-        var teams = {!! json_encode($teams) !!};
-        var records = {!! json_encode($records) !!};
-    </script>
-    <script src="{{asset('js/sliderTeams.js')}}"></script>
 </section>
 <section id="fourth">
     <div class="container">
         <div class="row">
-            <div class="col-8">
-                <div class="header-div" id="table-gsap">
+            <div class="col-8 d-flex flex-column justify-content-center">
+                <div id="table-gsap">
+                    <!--CONTENT-->
                     <div id="carouselTable" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselTable" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -243,7 +252,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <script src="{{asset('js/sliderTable.js')}}"></script>
+                    <!--ENDCONTENT-->
                 </div>
             </div>
         </div>

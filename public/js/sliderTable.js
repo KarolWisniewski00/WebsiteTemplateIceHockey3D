@@ -23,49 +23,47 @@ carouselTable.addEventListener('slide.bs.carousel', event => {
         ot.innerHTML = teamRecords['leagueRecord']['ot'];
         points.innerHTML = teamRecords['points'];
         var w = window.innerWidth;
-        if (w < 992) {} else {
-            gsap.from(dr, {
-                textContent: 0,
-                duration: 1,
-                ease: Power1.easeIn,
-                snap: { textContent: 1 },
-                stagger: 1,
-            });
-            gsap.from(gp, {
-                textContent: 0,
-                duration: 1,
-                ease: Power1.easeIn,
-                snap: { textContent: 1 },
-                stagger: 1,
-            });
-            gsap.from(w, {
-                textContent: 0,
-                duration: 1,
-                ease: Power1.easeIn,
-                snap: { textContent: 1 },
-                stagger: 1,
-            });
-            gsap.from(l, {
-                textContent: 0,
-                duration: 1,
-                ease: Power1.easeIn,
-                snap: { textContent: 1 },
-                stagger: 1,
-            });
-            gsap.from(ot, {
-                textContent: 0,
-                duration: 1,
-                ease: Power1.easeIn,
-                snap: { textContent: 1 },
-                stagger: 1,
-            });
-            gsap.from(points, {
-                textContent: 0,
-                duration: 1,
-                ease: Power1.easeIn,
-                snap: { textContent: 1 },
-                stagger: 1,
-            });
-        };
+        gsap.from(dr, {
+            textContent: 0,
+            duration: 1,
+            ease: Power1.easeIn,
+            snap: { textContent: 1 },
+            stagger: 1,
+        });
+        gsap.from(gp, {
+            textContent: 0,
+            duration: 1,
+            ease: Power1.easeIn,
+            snap: { textContent: 1 },
+            stagger: 1,
+        });
+        gsap.from(w, {
+            textContent: 0,
+            duration: 1,
+            ease: Power1.easeIn,
+            snap: { textContent: 1 },
+            stagger: 1,
+        });
+        gsap.from(l, {
+            textContent: 0,
+            duration: 1,
+            ease: Power1.easeIn,
+            snap: { textContent: 1 },
+            stagger: 1,
+        });
+        gsap.from(ot, {
+            textContent: 0,
+            duration: 1,
+            ease: Power1.easeIn,
+            snap: { textContent: 1 },
+            stagger: 1,
+        });
+        gsap.from(points, {
+            textContent: 0,
+            duration: 1,
+            ease: Power1.easeIn,
+            snap: { textContent: 1 },
+            stagger: 1,
+        });
     });
 })

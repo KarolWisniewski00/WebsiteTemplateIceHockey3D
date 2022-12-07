@@ -16,8 +16,14 @@
 </head>
 
 <body>
+    <script>
+        //get data from php
+        var teams = {!! json_encode($teams) !!};
+        var records = {!! json_encode($records) !!};
+    </script>
     @yield('loading')
     <div id="body">
+        <div id="bg"></div>
         <div class="puck d-none d-sm-none d-md-none d-lg-block">
             <img src="images/puck.png" alt="down" width="30px" class="img-fluid">
         </div>
@@ -36,23 +42,16 @@
                     </a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="{{url('/#first')}}" class="nav-link px-2 text-secondary">Start</a></li>
-                        <li><a href="{{url('/#second')}}" class="nav-link px-2 text-black">Najbliższe mecze</a></li>
-                        <li><a href="{{url('/#third')}}" class="nav-link px-2 text-black">Statystyki</a></li>
-                        <li><a href="{{url('/#fourth')}}" class="nav-link px-2 text-black">Tabela</a></li>
-                        <li><a href="{{url('/about')}}" class="nav-link px-2 text-black">O projekcie</a></li>
+                        @yield('nav')
                     </ul>
                 </div>
             </div>
         </header>
         @yield('content')
-        <div class="container">
+        <div class="container mt-5 pt-5">
             <footer class="py-3 my-4 bg-transparent">
                 <ul class="nav justify-content-center pb-3 mb-3">
-                    <li class="nav-item"><a href="{{url('/#first')}}" class="nav-link px-2 text-muted">Start</a></li>
-                    <li class="nav-item"><a href="{{url('/#second')}}" class="nav-link px-2 text-muted">Najbliższe mecze</a></li>
-                    <li class="nav-item"><a href="{{url('/#third')}}" class="nav-link px-2 text-muted">Statystyki</a></li>
-                    <li class="nav-item"><a href="{{url('/#fourth')}}" class="nav-link px-2 text-muted">Tabela</a></li>
+                    <li class="nav-item"><a href="{{url('/')}}" class="nav-link px-2 text-muted">Start</a></li>
                     <li><a href="{{url('/about')}}" class="nav-link px-2 text-muted">O projekcie</a></li>
                 </ul>
                 <p class="text-center text-muted">&copy; 2022 Karol Wiśniewski</p>
@@ -61,6 +60,8 @@
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="{{asset('js/gsap.js')}}"></script>
+    <script src="{{asset('js/sliderTeams.js')}}"></script>
+    <script src="{{asset('js/sliderTable.js')}}"></script>
     </div>
 </body>
 

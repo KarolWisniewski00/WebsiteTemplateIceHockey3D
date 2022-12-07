@@ -1,12 +1,7 @@
-html{
-    background-image: url('../images/bg3.jpg');
-    background-repeat: repeat-y;
-    background-attachment: fixed;
-    background-position: center;
-}
 body {
     margin: 0;
     min-width: 100vh;
+    background: transparent;
 }
 
 /*MAIN HTML*/
@@ -21,23 +16,21 @@ body {
     overflow: hidden;
 }
 
-/*LAYOUT*/
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-    width: 100%;
-}
-
 /*FIRST VIEW*/
 #first {
     height: 100vh;
 }
 
-.header-div {
-    margin-top: 50vh !important;
-    transform: translateY(-50%);
+#second {
+    height: 100vh;
+}
+
+#third {
+    height: 100vh;
+}
+
+#fourth {
+    height: 100vh;
 }
 
 .header-title {
@@ -83,6 +76,7 @@ header {
 .img-hover-1 {
     transition: 1s;
 }
+
 .hover:hover {
     transform: scale(1.3);
     transition: 1s;
@@ -92,44 +86,21 @@ header {
 .hover {
     transition: 1s;
 }
-#second {
-    height: 100vh;
-}
 
-#third {
-    height: 100vh;
-}
-#fourth {
-    height: 100vh;
-}
 .stats {
     font-weight: 700;
 }
+
 .scroll-down{
     font-weight: 300;
     opacity: 40%;
     padding-top: 2em;
 }
+
 .image-table{
     max-width: 10px;
 }
-.number-page{
-    position: absolute;
-    right: 3em;
-    top: 90%;
-    font-weight: 200;
-    opacity: 50%;
-    font-size: 2em;
-    cursor: default;
-}
-.stick{
-    position: fixed;
-    left: 1em;
-    top: 50vh;
-    transform: translateY(-50%);
-    opacity: 30%;
-    cursor: default;
-}
+
 .puck{
     position: fixed;
     left: 1.5em;
@@ -137,13 +108,19 @@ header {
     cursor: default;
     bottom: 2em;
 }
-.margin-100vh{
-    margin-top: calc(100vh - 150%);
-}
 .maches{
     overflow:auto;
-    height: 20em;
+    height: 45vh;
 }
+.number{
+    position: absolute;
+    right: 3em;
+    bottom: 1em;
+    font-weight: 300;
+    opacity: 50%;
+    font-size: 2em;
+}
+
 /*LOADING*/
 #loading-text {
     top: 50%;
@@ -165,4 +142,11 @@ canvas {
 #particle-container {
     position: fixed;
     filter: blur(1px);
+}
+#bg{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../images/bg3.jpg');
+    background-position: center;
 }

@@ -1,4 +1,8 @@
 @extends('layouts.main')
+@section('nav')
+<li><a href="{{url('/')}}" class="nav-link px-2 text-secondary">Start</a></li>
+<li><a href="{{url('/about')}}" class="nav-link px-2 text-black">O projekcie</a></li>
+@endsection
 @section('content')
 <div class="container">
     <div class="row">

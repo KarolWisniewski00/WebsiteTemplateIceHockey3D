@@ -12,6 +12,9 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function about(){
-        return view('about');
+        return view('about',[
+            'teams' => 0,
+            'records' => 0,
+        ]);
     }
 }

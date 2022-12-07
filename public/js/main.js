@@ -112,22 +112,23 @@ function init() {
                 end: "top 500em"
             },
             z: positionFourthObjectZ,
+            x: 1.9,
+            y: -0.1
         });
-        var w = window.innerWidth;
-        if (w < 992) {}else{
-            gsap.fromTo(helmet.rotation, {
-                z: 360 / 180 * Math.PI,
-            }, {
-                scrollTrigger: {
-                    scrub: true,
-                    ease: "slow(0.7, 0.7, false)",
-                    trigger: '#table',
-                    start: "-100em bottom",
-                    end: "top 500em"
-                },
-                z : 745 / 180 * Math.PI
-            });
-        };
+        gsap.fromTo(helmet.rotation, {
+            z: 360 / 180 * Math.PI,
+            y: 10 / 180 * Math.PI
+        }, {
+            scrollTrigger: {
+                scrub: true,
+                ease: "slow(0.7, 0.7, false)",
+                trigger: '#table',
+                start: "-100em bottom",
+                end: "top 500em"
+            },
+            z : 745 / 180 * Math.PI,
+            y: 10 / 180 * Math.PI
+        });
 
         //third
         gsap.fromTo(helmet.position, {
@@ -170,6 +171,7 @@ function init() {
                 end: "top 500em"
             },
             z: 360 / 180 * Math.PI,
+            y: 10 / 180 * Math.PI
         });
 
         //second
