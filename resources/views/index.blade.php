@@ -13,15 +13,15 @@
         <div class="row">
             <div class="col-6">
                 <div class="header-div">
-                    <h1 class="header-title pt-4">HOKEJ NA LODZIE</h1>
+                    <h1 class="header-title-1">HOKEJ</h1>
                     <p id="first-paragraf" class="paragraf">
                         Strona internetowa o tematyce amerykańskiej ligi hokeja - NHL.
                         Strona posiada dostęp do nadchodzących meczy, statystyk oraz tabel wyników.
                         W planach jest rozwinięcie projektu o kolejne ligi i wiele więcej!
                     </p>
-                    <a href="#second" class="btn btn-danger mb-2">Mecze</a>
-                    <a href="{{url('about')}}" class="btn btn-outline-dark mb-2">Więcej o projekcie</a>
-                    <div class="scroll-down w-100 text-center">
+                    <a href="#second" class="btn btn-danger mb-1">Mecze</a>
+                    <a href="{{url('about')}}" class="btn btn-outline-dark mb-1">Więcej o projekcie</a>
+                    <div class="d-none d-sm-flex scroll-down w-100 text-center">
                         <div class="hover">
                             <a href="#second" class="text-black text-decoration-none">
                                 <div>SKROLUJ W DÓŁ</div>
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="number-page">
+    <div class="number-page d-none d-md-block">
         <div id="number-1">01</div>
         <div class="margin-100vh" id="number-2">02</div>
         <div class="margin-100vh" id="number-3">03</div>

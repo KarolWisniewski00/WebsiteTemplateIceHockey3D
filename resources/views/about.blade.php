@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
-<div class="container mt-5 pt-5">
-    <div class="row mt-5">
+<div class="container">
+    <div class="row">
         <div class="col-12">
-            <h1 class="header-title-1">Planowane aktualizacje</h1>
+            <h1 class="header-title-1" style="padding-top: 4em;">Planowane aktualizacje</h1>
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent" aria-current="true">
                     <div class="d-flex w-100 justify-content-between">
