@@ -20,10 +20,10 @@
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-6 d-flex flex-column justify-content-center">
-                <div>
+                <div class="content-gsap" id="target-1">
                     <!--CONTENT-->
                     <h1 class="header-title-1">HOKEJ</h1>
-                    <p id="first-paragraf" class="paragraf">
+                    <p>
                         Strona internetowa o tematyce amerykańskiej ligi hokeja - NHL.
                         Strona posiada dostęp do nadchodzących meczy, statystyk oraz tabel wyników.
                         W planach jest rozwinięcie projektu o kolejne ligi i wiele więcej!
@@ -50,11 +50,11 @@
     <div class="container">
         <div class="row">
             <div class="col-6 offset-6 col-lg-3 offset-lg-9 d-flex flex-column justify-content-center">
-                <div id="second-div">
+                <div class="content-gsap" id="target-2">
                     <!--CONTENT-->
                     <div class="before-title">Najbliższe</div>
-                    <h1 class="header-title text-danger" id="second-header">Mecze</h1>
-                    <p id="second-paragraf" class="paragraf">
+                    <h1 class="header-title text-danger">Mecze</h1>
+                    <p>
                         Daty są podane w środkowoeuropejskiej strefie czasu standardowego
                     </p>
                     <div class="maches">
@@ -110,9 +110,8 @@
     <div class="container">
         <div class="row">
             <div class="col-6 col-lg-3 d-flex flex-column justify-content-center">
-                <div id="third-text">
+                <div class="content-gsap" id="target-3">
                     <!--CONTENT-->
-                    <span id="third-paragraf"></span>
                     <div id="carouselTeams" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($teams as $team)
@@ -136,7 +135,7 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <h1 class="header-title-1 text-danger" id="third-header">Statystyki</h1>
+                    <h1 class="header-title-1 text-danger">Statystyki</h1>
                     <div class="after-title">sezonu</div>
                     <p class="paragraf">
                         Dla każdej drużyny pokazuje liczbę wygranych, zdobytych goli oraz wygranych wznowień gry
@@ -154,7 +153,7 @@
                 </div>
             </div>
             <div class="col-6 col-lg-3 offset-lg-6 d-flex flex-column justify-content-center">
-                <div class="align-items-end d-flex flex-column text-center" id="third-images">
+                <div class="align-items-end d-flex flex-column text-center content-gsap" id="target-3-1">
                     <!--CONTENT-->
                     <div class="w-25 my-3">
                         <img class="img-fluid img-hover" src="{{asset('images/success.png')}}" alt="icon-trofeum">
@@ -174,11 +173,12 @@
         </div>
     </div>
 </section>
+<!--FOURTH-->
 <section id="fourth">
     <div class="container">
         <div class="row">
             <div class="col-8 d-flex flex-column justify-content-center">
-                <div id="table-gsap">
+                <div class="content-gsap" id="target-4">
                     <!--CONTENT-->
                     <div id="carouselTable" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -225,7 +225,7 @@
                     <table class="table table-striped align-middle text-center">
                         <thead>
                             <tr>
-                                <th scope="col" id="table">#</th>
+                                <th scope="col">#</th>
                                 <th scope="col">TEAM</th>
                                 <th scope="col">GP</th>
                                 <th scope="col">W</th>

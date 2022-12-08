@@ -1,5 +1,4 @@
 document.getElementById("body").style.visibility = "hidden";
-//3D
 gsap.registerPlugin(PixiPlugin, ScrollTrigger);
 let scene, camera, renderer;
 let direction
@@ -87,7 +86,6 @@ function init() {
         document.getElementById("body").style.visibility = "inherit";
         document.getElementById("loading").style.visibility = "hidden";
         helmet = gltf.scene.children[0];
-        scene.add(gltf.scene);
 
         //start
         helmet.rotation.z = -25 / 180 * Math.PI;
@@ -98,119 +96,126 @@ function init() {
         helmet.scale.y = scaleObject;
         helmet.scale.z = scaleObject;
 
-        //fourth
-        gsap.fromTo(helmet.position, {
-            z: -0.2,
-            x: 1.9,
-            y: -0.1
-        }, {
+        /*
+        GSAP
+        TIMELINE
+        HTML AND 3D OBJECT
+        */
+        var tl = new TimelineMax();
+        tl.from("header", 1, { y: -100, opacity: 0 }, 0)
+        .from("#first", 1, { y: 100, opacity: 0 }, 0)
+        .from('canvas', 1, { x: 200, opacity: 0 })
+        .from('#number-1', 3, { y: 100, opacity: 0 })
+        .from('.puck', 3, { x: -200, opacity: 0 });
+        //target-2
+        tl.to(helmet.position,{
             scrollTrigger: {
-                scrub: true,
+                scrub: 1,
                 ease: "slow(0.7, 0.7, false)",
-                trigger: '#table',
+                trigger: '#target-2',
                 start: "-100em bottom",
-                end: "top 500em"
+                end: "top 500em",
+                fastScrollEnd: true
             },
-            z: positionFourthObjectZ,
-            x: 1.9,
-            y: -0.1
-        });
-        gsap.fromTo(helmet.rotation, {
-            z: 360 / 180 * Math.PI,
-            y: 10 / 180 * Math.PI
-        }, {
-            scrollTrigger: {
-                scrub: true,
-                ease: "slow(0.7, 0.7, false)",
-                trigger: '#table',
-                start: "-100em bottom",
-                end: "top 500em"
-            },
-            z : 745 / 180 * Math.PI,
-            y: 10 / 180 * Math.PI
-        });
-
-        //third
-        gsap.fromTo(helmet.position, {
             z: positionSecondObjectZ,
             x: 1.9,
             y: -0.1
-        }, {
+        }).to(helmet.rotation,{
             scrollTrigger: {
-                scrub: true,
+                scrub: 1,
                 ease: "slow(0.7, 0.7, false)",
-                trigger: '#third-paragraf',
+                trigger: '#target-2',
                 start: "-100em bottom",
-                end: "top 500em"
+                end: "top 500em",
+                fastScrollEnd: true
+            },
+            z: 150 / 180 * Math.PI,
+            y: 10 / 180 * Math.PI
+        })
+        //target-3
+        tl.fromTo(helmet.position, {
+            z: positionSecondObjectZ,
+            x: 1.9,
+            y: -0.1
+        },{
+            scrollTrigger: {
+                scrub: 1,
+                ease: "slow(0.7, 0.7, false)",
+                trigger: '#target-3',
+                start: "top bottom",
+                end: "top 500em",
+                fastScrollEnd: true,
             },
             z: -0.2,
             x: 1.9,
             y: -0.1
-        });
-        gsap.to(helmet.scale, {
+        }).fromTo(helmet.rotation, {
+            z: 150 / 180 * Math.PI,
+            y: 10 / 180 * Math.PI
+        },{
             scrollTrigger: {
-                scrub: true,
+                scrub: 1,
                 ease: "slow(0.7, 0.7, false)",
-                trigger: '#third-paragraf',
-                start: "-100em bottom",
-                end: "top 500em"
+                trigger: '#target-3',
+                start: "top bottom",
+                end: "top 500em",
+                fastScrollEnd: true
+            },
+            z: 360 / 180 * Math.PI,
+            y: 10 / 180 * Math.PI
+        }).to(helmet.scale, {
+            scrollTrigger: {
+                scrub: 1,
+                ease: "slow(0.7, 0.7, false)",
+                trigger: '#target-3',
+                start: "top bottom",
+                end: "top 500em",
+                fastScrollEnd: true
             },
             x: scaleObjectThird,
             z: scaleObjectThird,
             y: scaleObjectThird,
         });
-        gsap.fromTo(helmet.rotation, {
-            z: 150 / 180 * Math.PI,
-            y: 10 / 180 * Math.PI
-        }, {
-            scrollTrigger: {
-                scrub: true,
-                ease: "slow(0.7, 0.7, false)",
-                trigger: '#third-paragraf',
-                start: "-100em bottom",
-                end: "top 500em"
-            },
-            z: 360 / 180 * Math.PI,
-            y: 10 / 180 * Math.PI
-        });
-
-        //second
-        gsap.fromTo(helmet.position, {
-            z: positionObjectZ,
-            x: 0,
-            y: 0
-        }, {
-            scrollTrigger: {
-                scrub: true,
-                ease: "slow(0.7, 0.7, false)",
-                trigger: '#second-paragraf',
-                start: "-100em bottom",
-                end: "top 500em"
-            },
-            z: positionSecondObjectZ,
+        //target-4
+        tl.fromTo(helmet.position, {
+            z: -0.2,
             x: 1.9,
             y: -0.1
-        });
-        gsap.fromTo(helmet.rotation, {
-            z: -25 / 180 * Math.PI,
-            y: 0
         }, {
             scrollTrigger: {
-                scrub: true,
+                scrub: 1,
                 ease: "slow(0.7, 0.7, false)",
-                trigger: '#second-paragraf',
-                start: "-100em bottom",
-                end: "top 500em"
+                trigger: '#target-4',
+                start: "top bottom",
+                end: "top 500em",
+                fastScrollEnd: true
             },
-            z: 150 / 180 * Math.PI,
+            z: positionFourthObjectZ,
+            x: 1.9,
+            y: -0.1
+        })
+        .fromTo(helmet.rotation, {
+            z: 360 / 180 * Math.PI,
             y: 10 / 180 * Math.PI
-        });
+        }, {
+            scrollTrigger: {
+                scrub: 1,
+                ease: "slow(0.7, 0.7, false)",
+                trigger: '#target-4',
+                start: "top bottom",
+                end: "top 500em",
+                fastScrollEnd: true
+            },
+            z : 745 / 180 * Math.PI,
+            y: 10 / 180 * Math.PI
+        })
+        scene.add(gltf.scene);
         animation();
     });
     function animation() {
         requestAnimationFrame(animation);
         var w = window.innerWidth;
-        if (w < 992) {} else{
+        if (w < 992) { } else {
             helmet.rotation.z += 0.001;
         }
         renderer.render(scene, camera);
